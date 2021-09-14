@@ -1,0 +1,85 @@
+/* * * * * * * Pet Profile  * * * * * * * *  */
+.title{
+  font-size: 19px;
+  font-weight: 500;
+  color: #1CB1BA;
+  margin: 0;
+}
+.title .nick{
+  font-size: 25px;
+  color: #393939;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.location,
+.map_icon{
+  font-size: 15px;
+  color: #bababa;
+}
+.map_icon{
+  margin: 0 5px 0 15px;
+}
+.divider{
+  border-bottom: 1px solid #1CB1BA;
+  margin: 10px 0 50px 0;
+}
+.wrapper{
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.photo{
+  flex-basis: 250px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+.photo img{
+  width: 100%;
+}
+.info{
+  flex-basis: 300px;
+}
+.pet_type{
+  color: #1CB1BA;
+  font-size: 21px;
+  font-weight: 500;
+}
+.date{
+  font-size: 15px;
+  font-weight: 500;
+  color: #bababa;
+  margin: 10px 0;
+}
+.grey_divider{
+  border-bottom: 1px solid #bababa;
+  margin: 20px 0;
+  margin-bottom: 40px;
+}
+.details{
+  color: #393939;
+  font-weight: 400;
+  font-size: 17px;
+  margin: 0 0 30px 0;
+}
+.details div{
+  margin-bottom: 3px;
+}
+.details span{
+  color: #1CB1BA;
+  margin-right: 10px;
+  font-weight: 500;
+}
+.phone_icon,
+.mail_icon{
+  position: relative;
+}
+.phone_icon span,
+.mail_icon span{
+  color: #bababa;
+  font-size: 25px;
+  position: relative;
+  bottom: -3px;
+}
+/* * * * * * * * * * * * * * * * * * * * * * *  */

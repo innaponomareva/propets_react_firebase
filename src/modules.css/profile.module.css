@@ -1,0 +1,95 @@
+.profile_form{
+  margin: 0 auto 100px !important;
+}
+.profile_form_title{
+  font-size: 19px;
+  font-weight: 500;
+  color: #1CB1BA;
+}
+.profile_divider{
+  border-bottom: 1px solid #1CB1BA;
+  margin: 10px 0 50px;
+}
+.profile_form_subtitle{
+  padding: 10px 0;
+  margin-bottom: 40px;
+  background-color: rgba(6, 179, 188, 0.6);
+  font-size: 19px;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+}
+.profile_avatar_name_section {
+  margin-bottom: 20px !important;
+  height: fit-content !important;
+}
+
+.profile_avatar_name_section input{
+  margin-top: 20px !important;
+  border: none !important;
+  color: #1CB1BA;
+  font-size: 19px;
+  font-weight: 500;
+  padding-left: 0 !important;
+  background-color: white;
+}
+.profile_user_img{
+  width: 90px;
+  height: 90px;
+  padding: 0 !important;
+  border-radius: 50%;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+.profile_user_img img{
+  width: 101%;
+}
+.default_img{
+  font-size: 60px;
+  color: #bababa;
+  padding: 0;
+  position: relative;
+  top: 12px;
+}
+.input_box{
+  position: relative;
+}
+.edit_img{
+  display: block;
+  cursor: pointer;
+  color: #bababa;
+  position: absolute;
+  top: 35%;
+  right: 5%;
+}
+.my_pet_section{
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.photo_box{
+  border-radius: 50%;
+  border: 1px solid #bababa;
+  overflow: hidden;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: 0px;
+  bottom: -15px;
+
+  text-align: center;
+}
+.photo_box .photo{
+  width: 100%;
+}
+
+.photo_box .default_line{
+  width: 70%;
+  margin: 44px auto;
+  font-size: 17px;
+  color: #bababa;
+}
+
+
+

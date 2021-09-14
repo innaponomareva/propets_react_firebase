@@ -1,0 +1,47 @@
+/* * * * * * * SectionTwoStart * * * * * * */
+.section_two {
+  padding: 150px 150px;
+}
+.img_box{
+  padding: 0;
+  text-align: center;
+}
+
+.info{
+  padding: 30px 0 0 70px;
+}
+.info_title {
+  color: #1cb1ba;
+  margin-bottom: 25px;
+}
+.info ul {
+  list-style: none;
+  font-size: 1.2rem;
+  padding-left: 2rem;
+}
+.info ul li {
+  position: relative;
+  line-height: 2rem;
+}
+.info ul li::before {
+  content: "\2022";
+  font-size: 3.1rem;
+  line-height: 2rem;
+  color: #1cb1ba;
+  font-weight: bold;
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 2rem; /* Also needed for space */
+  margin-left: -2rem; /* Also needed for space */
+  position: relative;
+  top: 8px
+}
+.join_text {
+  margin-top: 70px;
+  font-size: 1rem;
+}
+.join_text a{
+  color: #1cb1ba;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-weight: 600;
+}

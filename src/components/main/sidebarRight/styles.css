@@ -1,0 +1,39 @@
+/* * * * * Sidebar Right * * * * */
+.sidebar_right {
+  padding: 150px 0 200px 30px;
+  min-width: 35px;
+  flex-grow: 0;
+}
+.sidebar_right .nav-link {
+  display: flex;
+  align-items: center;
+  font-size: 19px;
+  font-weight: 400;
+  color: white;
+  padding: 7px 0px;
+  margin-bottom: 15px;
+}
+.nav_profile .divider {
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  margin: 0 70px 15px 0;
+}
+.nav_avatar{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 15px;
+  overflow: hidden;
+}
+.nav_avatar img{
+  width: 100%;
+  border-radius: 50%;
+}
+.nav_avatar img.default_avatar{
+  width: 85%;
+}
+.user_name{
+  width: 90px;
+}
+/* * * * * * * * * * * * * * * * * * */
+

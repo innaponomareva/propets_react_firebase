@@ -1,0 +1,10 @@
+/* * * * * * * SectionOneStart * * * * * * */
+.section_one {
+  padding: 100px;
+  background-color: #1cb1ba;
+  color: white;
+  font-weight: 400;
+  font-size: 2.1rem;
+  text-align: center;
+}
+/* * * * * * * * * * * * * * * * * * */

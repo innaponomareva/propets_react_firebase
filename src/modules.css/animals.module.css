@@ -1,0 +1,78 @@
+/* * * * * * * Animals  * * * * * * * *  */
+
+.title{
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  color: #1CB1BA;
+  margin: 0;
+}
+.divider{
+  border-bottom: 1px solid #1CB1BA;
+  margin: 10px 0;
+}
+.invitation{
+  font-size: 16px;
+  font-weight: 500;
+  color: #707070;
+  margin: 0 0 70px 0;
+}
+.invitation a{
+  color: #1CB1BA;
+  text-transform: uppercase;
+  margin: 0 5px;
+}
+.wrapper{
+  margin: 0 auto;
+  width: 102%;
+}
+.item{
+  margin: 0 5px 30px 5px;
+  padding: 0;
+  max-width: 200px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+.pet_name{
+  font-size: 21px;
+  font-weight: 600;
+  color: #707070;
+  margin: 0;
+}
+.location{
+  font-size: 15px;
+  font-weight: 500;
+  color: #707070;
+  margin: 0 0 5px 0;
+}
+.pet_photo{
+  width: 200px;
+  height: 200px;
+  margin: 0 0 10px 0;
+}
+.location span{
+  font-size: 13px;
+  color: #1CB1BA;
+  margin: 0 10px 0 0;
+}
+.view_details{
+  font-size: 15px;
+  font-weight: 500;
+  color: #707070;
+  position: relative;
+}
+.view_details span{
+  color: #707070;
+  margin: 0 0 0 10px;
+  position: relative;
+  bottom: -1px;
+}
+
+
+@media screen and (max-width: 510px){
+  .wrapper{
+    justify-content: center;
+  }
+}
+/* * * * * * * * * * * * * * * * * * * * * * *  */

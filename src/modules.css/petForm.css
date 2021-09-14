@@ -1,0 +1,89 @@
+/* * * * * * *  Pet Form  * * * * * * * *  */
+.pet_form_title{
+  font-size: 19px;
+  font-weight: 500;
+  color: #1CB1BA;
+}
+.pet_form_divider{
+  border-bottom: 1px solid #1CB1BA;
+  margin: 10px 0 50px;
+}
+.form_picture{
+  flex-grow: 1;
+}
+.form_upload{
+  flex-grow: 0;
+}
+.form_picture img{
+  width: 100%;
+}
+.form-label p{
+  color: #1CB1BA;
+  font-size: 12px;
+}
+.form-group textarea{
+  border: 1px solid #1CB1BA;
+  padding: 15px;
+  min-height: 100px;
+}
+.form-group textarea::placeholder{
+  color: #bababa;
+}
+.form-group select{
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #1CB1BA;
+}
+.form-group select:focus{
+  box-shadow: none;
+  color: #1cb1ba;
+  border-bottom: 3px solid #1cb1ba;
+}
+.pet_form_divider_bottom{
+  border-bottom: 1px solid #bababa;
+  margin: 100px 0 50px;
+}
+.input_box{
+  position:'relative';
+  z-index:'3';
+}
+.custom-file-input {
+  height: fit-content;
+  border: none !important;
+  padding: 0 !important;
+  opacity: 1;
+  cursor: default;
+  color: inherit;
+}
+.custom-file-input::-webkit-file-upload-button {
+  margin: 0 10px 0 0;
+  background-color: #1cb1ba;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  color: white;
+}
+.custom-file-label {
+  display: none;
+}
+.contact{
+  flex-wrap: wrap;
+  margin: 0;
+}
+.publish_post_btn{
+  display: block;
+  margin: 0;
+  margin-top: 30px;
+  margin-left: auto;
+  background-color: #1cb1ba;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 3px;
+  color: white;
+}
+.publish_post_btn span{
+  margin: 0 15px 0 0;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * *  */

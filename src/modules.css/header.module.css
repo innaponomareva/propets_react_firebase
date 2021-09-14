@@ -1,0 +1,90 @@
+/* * * * * * * Header * * * * * * */
+.header {
+  width: 100%;
+  padding: 250px 0;
+  background-color: white;
+  height: 93vh;
+  overflow: hidden;
+  position: relative;
+}
+.header_img {
+  width: 550px;
+  margin-top: -150px;
+}
+.header_slogan {
+  font-size: 3.6rem;
+  line-height: 4.6rem;
+  font-weight: 400;
+}
+.header_slogan span{
+  color: #1cb1ba;
+}
+.header_nav {
+  margin-top: 50px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.header_btn {
+  padding: 16px 0;
+  height: 70px;
+  margin-bottom: 15px;
+  border-radius: 0 50px 50px 0;
+  color: white;
+  text-transform: none;
+  font-size: 25px;
+  font-weight: 400;
+  position: relative;
+  z-index: 2;
+}
+.btn_tail {
+  padding: 16px 0;
+  height: 70px;
+  border-radius: 0 50px 50px 0;
+  background-color: inherit;
+  width: 300%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+.header_btn:hover {
+  text-decoration: none;
+  color: white;
+}
+.lost_btn {
+  width: 70%;
+  background-color: #fa5456;
+}
+.lost_icon{
+  width: 60px;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+.lost_btn:hover {
+  background-color: #fdd219; 
+}
+.found_btn {
+  width: 50%;
+  background-color: #1cb1ba;
+}
+.lost_btn::before,
+.found_btn::before{
+  content: attr(data-silent);
+}
+.lost_btn:hover::before,
+.found_btn:hover::before{
+  content: attr(data-hover);
+}
+.join_text {
+  margin-top: 50px;
+  font-size: 1.1rem;
+}
+.join_text a {
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: #1cb1ba;
+}
+/* * * * * * * * * * * * * * * * * * */

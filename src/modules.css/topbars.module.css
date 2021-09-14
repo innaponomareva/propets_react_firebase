@@ -1,0 +1,70 @@
+.topbar {
+  padding: 25px;
+  height: fit-content;
+  box-shadow: 2px 2px 2px rgba(17, 114, 119, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+.topbar_white {
+  background-color: white;
+}
+.topbar_teal {
+  background-color: #1cb1ba;
+}
+.btn_box{
+  padding: 0;
+  width: fit-content;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  height: fit-content;
+}
+.topbar_btn {
+  text-align: center;
+  border-radius: 50px;
+  width: fit-content !important;
+  padding: 10px 30px;
+  margin: 0 5px;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background-color: #1cb1ba;
+  border: 1px solid white;
+
+}
+.topbar_btn span{
+  text-align: center;
+  margin-right: 15px;
+}
+.topbar_btn:hover {
+  color: white;
+  text-decoration: none;
+}
+.login_btn {
+  color: white;
+  background-color: #1cb1ba;
+  border: 1px solid white;
+}
+.login_btn:hover {
+  background-color: #fdd219;
+  border: 1px solid #fdd219;
+  color: black;
+  text-decoration: none;
+}
+.lost_btn{
+  background-color: #fa5456;
+}
+.addpost_btn{
+  margin: 0 70px 0 0;
+}
+.topbar .row div {
+  padding: 0;
+  margin: 0;
+}
+.topbar_logo {
+  width: 170px;
+}
+
