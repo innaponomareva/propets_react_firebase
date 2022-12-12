@@ -1,0 +1,36 @@
+/* * * * * Sidebar Right * * * * */
+
+.sidebar_right {
+  width: 15%;
+  padding: 10.5rem 2rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nav_profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.nav_auth {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+
+/* * * * * * * * * * * * * * * * * * */
+
+@media screen and (max-width: 1520px) {
+  .sidebar_right {
+    width: 10%;
+    padding: 10.5rem 0 0 2rem;
+  }
+  .nav_auth {
+    align-items: center;
+  }
+}

@@ -1,0 +1,33 @@
+/* * * * * * * SectionOneStart * * * * * * */
+.section_one {
+  padding: 5rem 4rem;
+  background-color: #1cb1ba;
+}
+.text_container {
+  color: white;
+  font-weight: 400;
+  font-size: 2.1rem;
+  line-height: 2.9rem;
+  text-align: center;
+}
+/* * * * * * * * * * * * * * * * * * */
+
+@media screen and (max-width: 900px) {
+  .section_one {
+    padding: 5rem 2rem;
+  }
+  .text_container {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .section_one {
+    padding: 5rem 1rem;
+  }
+  .text_container {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+}

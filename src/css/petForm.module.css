@@ -1,0 +1,45 @@
+/* * * * * * *  Pet Form  * * * * * * * *  */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.section_one,
+.section_three {
+  display: flex;
+  gap: 1rem;
+}
+.section_one .controls,
+.section_one .upload {
+  width: 50%;
+}
+.section_one .controls {
+  display: flex;
+  flex-direction: column;
+}
+.section_one .controls {
+  row-gap: 1rem;
+}
+.section_two {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.btn_section button {
+  margin-left: auto;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * *  */
+
+@media screen and (max-width: 1400px) {
+  .section_one .controls,
+  .section_one .upload {
+    width: 100%;
+  }
+  .section_one {
+    flex-wrap: wrap-reverse;
+  }
+  .section_three {
+    flex-direction: column;
+  }
+}

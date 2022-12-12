@@ -1,0 +1,75 @@
+.avatar_card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: #bababa70 !important;
+  cursor: default;
+}
+.avatar_card_nav {
+  cursor: pointer;
+  color: white !important;
+}
+.avatar_card_img_box {
+  position: relative;
+}
+
+.avatar_card_img {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #bababa90;
+  overflow: hidden;
+}
+
+.upload_icon {
+  position: absolute;
+  top: 0.35rem;
+  right: 0;
+  cursor: pointer;
+}
+.avatar_card_img_nav {
+  border: 1px solid white;
+}
+.card_large {
+  width: 5.5rem;
+  height: 5.5rem;
+}
+.card_small {
+  width: 3rem;
+  height: 3rem;
+}
+.avatar_card_img img {
+  width: 100%;
+}
+.avatar_card_svg {
+  color: #bababa70;
+}
+.avatar_card_svg_nav {
+  color: white !important;
+}
+.svg_large {
+  font-size: 3rem;
+}
+.svg_small {
+  font-size: 2rem;
+}
+.avatar_card_name {
+  color: #1cb1ba;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0;
+}
+
+.avatar_card_name_nav {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: white;
+}
+.avatar_card_date {
+  color: #bababa;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0;
+}

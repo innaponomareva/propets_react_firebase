@@ -1,0 +1,65 @@
+.nav_small {
+  width: fit-content;
+  height: fit-content;
+}
+.window_top {
+  opacity: 60%;
+  height: 100%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transition: all 0.2s linear;
+}
+.window_top_closed {
+  display: none;
+}
+.window_top_open {
+  font-display: block;
+}
+.nav_burger_icon {
+  display: block;
+  font-size: 25px;
+  cursor: pointer;
+}
+.nav_burger_green {
+  color: #1cb1ba;
+}
+.nav_burger_white {
+  color: white;
+}
+.nav_close_icon {
+  font-size: 22px !important;
+  cursor: pointer;
+  color: white;
+}
+.nav_content {
+  width: 20rem;
+  height: 100%;
+  padding: 4rem 2rem 0 2rem;
+  background-color: #1cb1ba;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: fixed;
+  top: 0px;
+  right: -500px;
+  transition: all 0.2s linear;
+  overflow-y: scroll;
+  z-index: 2;
+}
+.nav_content_closed {
+  right: -500px;
+}
+.nav_content_open {
+  right: 0;
+}
+.divider {
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  margin: 0.8rem 0;
+}

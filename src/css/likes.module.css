@@ -1,0 +1,31 @@
+/* * * * * * Likes * * * * *  */
+
+.likes_box {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 1rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+.like_btn {
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.like_disabled {
+  font-size: 1.1rem;
+  cursor: default;
+}
+.likes_count {
+  font-size: 1rem;
+}
+.hidden {
+  display: none;
+}
+.add_like_btn {
+  padding-left: 10px;
+  display: inline-block;
+}
+.post_divider {
+  border-bottom: 1px solid #393939;
+}
+/* * * * * * * * * * * * * * *  */

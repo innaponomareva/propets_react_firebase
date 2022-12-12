@@ -1,0 +1,59 @@
+.nav_item {
+  padding: 0.5rem 0 0.5rem;
+  position: relative;
+}
+.nav_item_special_left {
+  padding-right: 1rem;
+}
+.nav_item_special_right {
+  padding-left: 1rem;
+}
+.navlink {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  z-index: 4;
+}
+
+.navlink_icon {
+  display: flex;
+  align-items: center;
+}
+
+.navlink_default.active {
+  color: #117277;
+  transition: 0.2s linear;
+}
+
+.navlink_special.active {
+  color: #1cb1ba;
+  transition: 0.2s linear;
+}
+
+.back_active {
+  display: none;
+  background-color: white;
+  height: 100%;
+  width: 300%;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+}
+.back_active_left {
+  border-radius: 0 3rem 3rem 0;
+  right: 0;
+}
+.back_active_right {
+  border-radius: 0 0 3rem 3rem;
+  left: 0;
+}
+
+.navlink_special.active ~ .back_active {
+  display: block;
+}

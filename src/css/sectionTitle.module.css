@@ -1,0 +1,17 @@
+.section_title_container {
+  margin-bottom: 4rem;
+}
+.section_title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  color: #1cb1ba;
+  margin: 0 0 1rem 0;
+}
+.section_title_divider {
+  border-bottom: 1px solid #1cb1ba;
+}
+
+.section_subtitle_container {
+  margin-top: 1rem;
+}

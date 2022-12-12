@@ -1,0 +1,33 @@
+/* * * * * * Post Form * * * * *  */
+
+.post_form {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.section_one {
+  display: flex;
+  gap: 5rem;
+}
+
+.controls {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section_two {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* * * * * * * * * * * * * * *  */
+
+@media screen and (max-width: 1200px) {
+  .section_one {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+}

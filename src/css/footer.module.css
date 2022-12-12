@@ -1,0 +1,46 @@
+/* * * * * * * Footer * * * * * * */
+.footer {
+  height: fit-content;
+  padding: 2rem 4rem;
+  background-color: #1cb1ba;
+  box-shadow: 0 -2px 2px -2px rgba(17, 114, 119, 0.4);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  width: 8rem;
+  display: block;
+}
+.company_address {
+  width: 20rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: white;
+}
+/* * * * * * * * * * * * * * * * * */
+
+@media screen and (max-width: 900px) {
+  .footer {
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .company_address {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .footer {
+    padding: 2rem 1rem;
+  }
+}

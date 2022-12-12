@@ -1,0 +1,62 @@
+/* * * * * * * * Comment Section * * * * * * *  */
+
+.comment_section_title {
+  font-size: 1.18rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  color: #1cb1ba;
+}
+.comment_section_divider {
+  border-bottom: 1px solid #1cb1ba;
+  margin: 0.6rem 0 2.5rem;
+}
+.comments_box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* * * * * * * * Comment  * * * * * * *  */
+
+.comment_divider {
+  border-bottom: 1px solid hsla(0, 0%, 73%, 0.7);
+}
+.comment_details {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #393939;
+}
+.comment_details span {
+  padding: 0 0.4rem;
+  font-size: 13px;
+}
+.comment_text {
+  padding: 1rem 0;
+  color: #393939;
+}
+
+/* * * * * * * * Comment Form * * * * * * *  */
+
+.comment_textarea_container {
+  margin: 4rem 0 1.25rem 0;
+}
+
+.link_btn {
+  padding: 0;
+  color: #1cb1ba;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.link_btn:hover {
+  text-decoration: underline;
+  color: #1cb1ba;
+}
+.add_comment_btn {
+  display: block;
+  background-color: white;
+  border: none;
+  width: fit-content;
+  margin-left: auto;
+}
+/* * * * * * * * * * * * * * *  */

@@ -1,0 +1,39 @@
+.grid_item {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.pet_name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #707070;
+}
+.location {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #707070;
+  display: flex;
+  align-items: center;
+}
+.pet_photo_box {
+  border: 1px solid #bababa50;
+}
+.pet_photo {
+  height: 14rem;
+}
+.location span {
+  font-size: 0.8rem;
+  color: #1cb1ba;
+  margin: 0 0.3rem 0 0;
+}
+
+@media screen and (max-width: 300px) {
+  .pet_photo {
+    height: 10rem;
+  }
+}

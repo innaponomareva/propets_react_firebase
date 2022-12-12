@@ -1,0 +1,51 @@
+.user_profile {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.pets_container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.content {
+  display: flex;
+  column-gap: 3rem;
+  row-gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+.username_box {
+  position: relative;
+  z-index: 0;
+}
+
+.edit_img {
+  display: block;
+  cursor: pointer;
+  color: #bababa;
+  position: absolute;
+  top: 0.8rem;
+  right: 0;
+  z-index: 1;
+}
+
+.btn_container {
+  display: flex;
+  gap: 0.5rem;
+  width: fit-content;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.outer-container {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  background-color: #1cb1ba;
+  padding: 0 4rem;
+  position: relative;
+}
+.inner-container {
+  width: 70%;
+  padding: 8rem 4rem;
+  background-color: rgb(255, 255, 255);
+  height: fit-content;
+  min-height: 100vh;
+}
+
+@media screen and (max-width: 1520px) {
+  .outer-container {
+    padding: 0 2rem;
+  }
+  .inner-container {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .inner-container {
+    width: 100%;
+    padding: 6rem 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .outer-container {
+    padding: 0 1rem;
+  }
+  .inner-container {
+    padding: 6rem 1rem;
+  }
+}
+
+/* * * * * * Controls * * * * * * */
+
+.form-group-row {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 1rem;
+  flex-grow: 1;
+}
+.form-group-column {
+  display: flex;
+  flex-direction: column;
+}
+.text-label {
+  min-width: 5.2rem;
+  font-size: 1rem;
+  color: #393939;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.form-control {
+  font-size: 1rem;
+  color: #393939;
+  width: 100%;
+  height: 3rem;
+  padding: 0.6rem 0;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #1cb1ba;
+  background-color: none;
+}
+.form-control:disabled {
+  color: #bababa;
+  border-bottom: 1px solid #bababa;
+  background-color: white;
+}
+.form-control::placeholder {
+  color: #bababa;
+}
+.error-text {
+  color: red;
+}
+
+textarea {
+  font-size: 1rem;
+  line-height: 1.7rem;
+  color: #393939;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #1cb1ba;
+  padding: 1rem 0 0;
+  min-height: 4rem;
+  height: 4rem;
+  max-height: 10rem;
+  resize: vertical;
+}
+.textarea_long {
+  max-height: 35rem;
+  min-height: 15rem;
+  height: 15rem;
+}
+
+.form-control:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: none;
+  border-bottom: 1.7px solid #1cb1ba;
+}
+.form-control::placeholder,
+textarea::placeholder {
+  font-size: 1rem;
+  color: #bababa;
+}
+
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 0, 5rem;
+  border-radius: 50px;
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  padding: 0.3rem;
+}
+.custom-file-upload-long {
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+}
+.custom-file-upload-green {
+  background-color: #06b2bb;
+}
+.custom-file-upload-grey {
+  background-color: #bababa;
+}
+.help-text {
+  color: #bababa;
+}
+.help-text-small {
+  color: #bababa;
+  font-size: 0.85rem;
+  line-height: 1.15rem;
+}
+.help-text span.underline {
+  text-decoration: underline;
+}
+.help-text-green {
+  color: #1cb1ba;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 600px) {
+  .form-group-row {
+    flex-direction: column;
+    gap: 0;
+    flex-grow: 0;
+  }
+}
+
+/* * * * * * Dropdown * * * * * * */
+.listbox {
+  position: relative;
+}
+.listbox-btn {
+  width: 100%;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 1px solid #1cb1ba;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.6rem 0.6rem 0;
+}
+.listbox-btn-disabled {
+  color: #bababa;
+  border-bottom: 1px solid #bababa;
+  background-color: white;
+}
+.listbox-btn-chevron {
+  font-size: 0.9rem;
+  color: #393939;
+}
+.listbox-btn-chevron-disabled {
+  color: #bababa;
+}
+.listbox-btn-chevron-up {
+  transform: rotate(-180deg);
+  transition: 0.1s ease-in;
+}
+.listbox-btn-chevron-down {
+  transform: rotate(0deg);
+  transition: 0.1s ease-in;
+}
+.listbox-btn-value {
+  color: #1cb1ba;
+}
+.listbox-btn-placeholder {
+  color: #bababa;
+}
+.listbox-options {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  border-bottom: 1px solid #1cb1ba;
+  background-color: white;
+  padding: 0.3rem 0;
+  max-height: 11.9rem;
+  overflow-y: scroll;
+  outline: none;
+}
+.listbox-option {
+  list-style: none;
+  padding: 0.3rem 0;
+}
+.listbox-option-selected {
+  color: #1cb1ba;
+}
+.listbox-option:hover {
+  background-color: #bababa20;
+}
+/* * * * * * * * * * * * * * * * * */
+
+.nav-link {
+  text-decoration: none;
+}
+
+/* * * * * * * * * Alert * * * * * * * * */
+.alert {
+  font-size: 1rem;
+  color: rgb(55, 55, 55);
+  width: fit-content;
+  padding: 0.6rem 1rem;
+  margin-bottom: 2rem;
+}
+.alert-success {
+  background-color: rgba(2, 160, 2, 0.194);
+}
+.alert-secondary {
+  background-color: rgba(32, 161, 241, 0.194);
+}
+.alert-warning {
+  background-color: rgba(255, 49, 49, 0.194);
+}
+
+/* * * * * * * * * * * * * * * * * * * */

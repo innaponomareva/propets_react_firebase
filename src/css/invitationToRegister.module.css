@@ -1,0 +1,13 @@
+.invitation {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #707070;
+  margin-bottom: 1rem;
+}
+.invitation a {
+  color: #1cb1ba;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.1rem;
+  margin: 0 0.5rem;
+}

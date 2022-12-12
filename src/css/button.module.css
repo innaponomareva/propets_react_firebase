@@ -1,0 +1,73 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  border: none;
+  border-radius: 50px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn_long {
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+.btn_transparent {
+  background-color: transparent;
+  border: 1px solid #06b2bb;
+  color: #06b2bb;
+}
+.btn_transparent_border_white {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+.btn_green {
+  background-color: #06b2bb;
+  border: 1px solid #06b2bb;
+  color: white;
+}
+.btn_red {
+  background-color: #fa5456;
+  border: 1px solid #fa5456;
+  color: white;
+}
+.btn_red_disabled {
+  background-color: #ff9395;
+  border: 1px solid #ff9395;
+  color: white;
+  cursor: default;
+}
+.btn_green_disabled {
+  background-color: #93d7db;
+  border: 1px solid #93d7db;
+  color: white;
+  cursor: default;
+}
+.btn_transparent_disabled {
+  background-color: transparent;
+  border: 1px solid #93d7db;
+  color: #93d7db;
+  cursor: default;
+}
+.btn_transparent_border_white_disabled {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: default;
+}
+
+.btn_transparent:hover,
+.btn_green:hover {
+  background-color: #06b2bb;
+  color: white;
+}
+.btn_transparent_border_white:hover {
+  background-color: #fdd219;
+  border: 1px solid #fdd219;
+  color: #393939;
+}

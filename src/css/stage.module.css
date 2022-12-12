@@ -1,0 +1,178 @@
+/* * * * * * * Stage * * * * * * */
+.stage {
+  min-height: 100vh;
+  display: flex;
+  padding: 5rem 10rem;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+}
+
+.info_box {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.slogan {
+  font-size: 3.6rem;
+  line-height: 4.6rem;
+  font-weight: 400;
+}
+.slogan_green {
+  color: #1cb1ba;
+}
+.nav_btn_container {
+  max-width: 34rem;
+  display: flex;
+  flex-direction: column;
+}
+.nav_btn {
+  display: flex;
+  align-items: center;
+  height: 4.3rem;
+  margin-bottom: 1rem;
+  border-radius: 0 50px 50px 0;
+  color: white;
+  text-transform: none;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 400;
+  position: relative;
+  z-index: 2;
+}
+.btn_tail {
+  height: 4.3rem;
+  border-radius: 0 50px 50px 0;
+  background-color: inherit;
+  width: 300%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+.nav_btn:hover {
+  text-decoration: none;
+  color: white;
+}
+.lost_btn {
+  width: 70%;
+  background-color: #fa5456;
+}
+.lost_icon {
+  width: 3.6rem;
+  height: 3.6rem;
+  position: absolute;
+  top: 0.6rem;
+  right: 0;
+}
+.lost_btn:hover {
+  background-color: #fdd219;
+}
+.found_btn {
+  width: 50%;
+  background-color: #1cb1ba;
+}
+.lost_btn::before,
+.found_btn::before {
+  content: attr(data-silent);
+}
+.lost_btn:hover::before,
+.found_btn:hover::before {
+  content: attr(data-hover);
+}
+.img_box {
+  width: 34rem;
+}
+.join_text {
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+}
+.join_text a {
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #1cb1ba;
+  margin: 0 0.15rem;
+  letter-spacing: 0.1rem;
+}
+/* * * * * * * * * * * * * * * * * * */
+
+@media screen and (max-width: 1400px) {
+  .stage {
+    padding: 7rem 4rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .img_box {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .info_box {
+    gap: 2rem;
+  }
+  .slogan {
+    font-size: 3rem;
+    line-height: 3.9rem;
+    font-weight: 400;
+  }
+  .nav_btn {
+    font-size: 1.2rem;
+    height: 3.7rem;
+  }
+  .btn_tail {
+    height: 3.7rem;
+  }
+  .lost_icon {
+    width: 3rem;
+    height: 3rem;
+    top: 0.7rem;
+    right: 0;
+  }
+}
+@media screen and (max-width: 450px) {
+  .stage {
+    padding: 5rem 2rem;
+  }
+  .slogan {
+    font-size: 2.7rem;
+    line-height: 3.5rem;
+  }
+  .lost_btn {
+    width: 80%;
+  }
+  .found_btn {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .stage {
+    padding: 5rem 1rem;
+  }
+  .slogan {
+    font-size: 2rem;
+    line-height: 2.9rem;
+  }
+  .nav_btn {
+    font-size: 1rem;
+    height: 2.7rem;
+  }
+  .btn_tail {
+    height: 2.7rem;
+  }
+  .lost_icon {
+    width: 2rem;
+    height: 2rem;
+    top: 0.6rem;
+    right: 0;
+  }
+  .join_text {
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+  }
+}

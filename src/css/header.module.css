@@ -1,0 +1,51 @@
+.header {
+  padding: 1.2rem 4rem;
+  height: fit-content;
+  box-shadow: 0.125rem 0.125rem 0.125rem rgba(17, 114, 119, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+.header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.header_main {
+  background-color: #ffffff;
+}
+.header_start {
+  background-color: #1cb1ba;
+}
+.header_logo {
+  display: block;
+  width: 9rem;
+}
+
+.header_right_side,
+.header_btn_box {
+  display: flex;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .header_logo {
+    display: block;
+    width: 8rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .header {
+    padding: 1.2rem 2rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header {
+    padding: 1.2rem 1rem;
+  }
+}

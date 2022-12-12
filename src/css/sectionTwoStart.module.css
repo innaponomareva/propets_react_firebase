@@ -1,0 +1,80 @@
+/* * * * * * * SectionTwoStart * * * * * * */
+.section_two {
+  padding: 5rem 4rem;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.img_box img {
+  display: block;
+  width: 30rem;
+}
+
+.info_title {
+  color: #1cb1ba;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.info_box {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2rem;
+}
+.info_box ul {
+  list-style: none;
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  font-weight: 500;
+  color: #393939;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.info_box ul li {
+  display: flex;
+  gap: 0.5rem;
+}
+.info_box ul li::before {
+  content: "\2022";
+  font-size: 2rem;
+  color: #1cb1ba;
+  font-weight: 500;
+  padding-top: 0.2rem;
+  width: fit-content;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .section_two {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .section_two {
+    padding: 5rem 2rem;
+  }
+
+  .img_box img {
+    width: 20rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .section_two {
+    padding: 5rem 1rem;
+  }
+  .img_box img {
+    width: 15rem;
+  }
+  .info_box ul {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
