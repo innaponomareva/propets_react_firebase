@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import styles from "../../css/navSmallScreen.module.css";
+import styles from "../css/navSmallScreen.module.css";
 import { FiLogIn, FiLogOut } from "react-icons/fi";
 import clsx from "clsx";
 import {
@@ -13,11 +13,11 @@ import {
   FaTimes,
   FaWalking,
 } from "react-icons/fa";
-import { UserContext } from "../../context/user/userContext";
-import NavButton from "../buttons/NavButton";
-import AvatarCard from "../AvatarCard";
+import { UserContext } from "../context/user/userContext";
+import NavButton from "./buttons/NavButton";
+import AvatarCard from "./AvatarCard";
 
-const NavSmallScreen = ({ user, color = "green" }) => {
+const NavSmall = ({ user, color = "green" }) => {
   const { logout } = useContext(UserContext);
   const [open, setOpen] = useState(false);
 
@@ -81,7 +81,7 @@ const NavSmallScreen = ({ user, color = "green" }) => {
         <div className={styles.divider}></div>
 
         <NavButton
-          path={user ? "/" : "/login"}
+          path="/login"
           label={user ? "Logout" : "Login"}
           icon={user ? <FiLogOut /> : <FiLogIn />}
           onClick={user ? logout : null}
@@ -91,4 +91,4 @@ const NavSmallScreen = ({ user, color = "green" }) => {
   );
 };
 
-export default NavSmallScreen;
+export default NavSmall;

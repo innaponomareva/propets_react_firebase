@@ -3,7 +3,7 @@ import styles from "../css/header.module.css";
 import { NavLink, useLocation } from "react-router-dom";
 import Logo from "./logos/Logo";
 import { FaPlus, FaPaw, FaSearch } from "react-icons/fa";
-import NavSmallScreen from "./NavSmallScreen/NavSmallScreen";
+import NavSmall from "./NavSmall";
 import Button from "./buttons/Button";
 
 // type ---> start | main
@@ -70,13 +70,13 @@ const Header = ({ type = "start", width, user }) => {
             </>
           </div>
           {type === "main" && width < 900 && (
-            <NavSmallScreen
+            <NavSmall
               user={user}
               color={type === "start" ? "white" : "green"}
             />
           )}
           {type === "start" && (
-            <NavSmallScreen
+            <NavSmall
               user={user}
               color={type === "start" ? "white" : "green"}
             />

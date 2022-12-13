@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Route, Switch, withRouter } from "react-router-dom";
+import { Redirect, Route, Switch, withRouter } from "react-router-dom";
 import Start from "./pages/Start";
 import PostLarge from "./pages/PostLarge";
 import UserProfile from "./pages/UserProfile";
@@ -47,8 +47,8 @@ function App() {
             exact
             render={() => <Start user={user} width={width} />}
           />
-          <Route path="/register" component={AuthRegisterForm} />
-          <Route path="/login" component={AuthLoginForm} />
+          <Route exact path="/register" component={AuthRegisterForm} />
+          <Route exact path="/login" component={AuthLoginForm} />
           <Route
             path="/addpost"
             exact
@@ -91,6 +91,7 @@ function App() {
             render={() => <PostLarge user={user} />}
           />
           <Route path="/posts" exact render={() => <Posts user={user} />} />
+          <Route path="*" exact render={() => <Redirect to="/" />} />
         </Switch>
       )}
       {!user && (
@@ -100,8 +101,8 @@ function App() {
             exact
             render={() => <Start user={user} width={width} />}
           />
-          <Route path="/register" component={AuthRegisterForm} />
-          <Route path="/login" component={AuthLoginForm} />
+          <Route exact path="/register" component={AuthRegisterForm} />
+          <Route exact path="/login" component={AuthLoginForm} />
           <Route path="/lost/:id" exact component={LostPetProfile} />
           <Route
             path="/lost"
@@ -120,6 +121,7 @@ function App() {
             exact
             render={() => <PostLarge user={user} />}
           />
+          <Route path="*" exact render={() => <Redirect to="/" />} />
         </Switch>
       )}
     </>

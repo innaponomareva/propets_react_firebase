@@ -1,17 +1,38 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { FaPaw } from "react-icons/fa";
 import TextInput from "../components/controls/TextInput";
 import Button from "../components/buttons/Button";
 import { useFormik } from "formik";
+import { UserContext } from "../context/user/userContext";
+import { useHistory } from "react-router-dom";
 
-const AuthForm = ({ formType, values, onAuthSubmit, schema }) => {
+const AuthForm = ({ formType, values, schema }) => {
+  const { login, register, error, authSuccess, clearError } =
+    useContext(UserContext);
+  const history = useHistory();
+
+  useEffect(() => {
+    if (authSuccess) history.push("/posts");
+  }, [authSuccess, history]);
+
+  useEffect(() => {
+    return () => {
+      if (error) clearError();
+    };
+  }, [clearError, error]);
+
   const formik = useFormik({
     initialValues: {
       ...values,
     },
     onSubmit: async (values, actions) => {
       actions.setSubmitting(true);
-      await onAuthSubmit({ ...values });
+      if (formType === "login") {
+        await login({ ...values });
+      }
+      if (formType === "register") {
+        await register({ ...values });
+      }
       actions.setSubmitting(false);
     },
     validationSchema: schema,
@@ -20,7 +41,7 @@ const AuthForm = ({ formType, values, onAuthSubmit, schema }) => {
   return (
     <form>
       <div className="auth_form_item">
-        {formType === "login" && <div></div>}
+        {formType === "login" && <div className="error-text">{error}</div>}
         <div className="auth_controls">
           {formType === "register" && (
             <TextInput
@@ -114,7 +135,7 @@ const AuthForm = ({ formType, values, onAuthSubmit, schema }) => {
             </>
           )}
         </div>
-        {formType === "register" && <div></div>}
+        {formType === "register" && <div className="error-text">{error}</div>}
       </div>
 
       <div className="auth_form_divider"></div>

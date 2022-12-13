@@ -9,6 +9,7 @@ import {
   LOGIN,
   LOGOUT,
   CLEAR_UPDATE_SUCCESS,
+  CLEAR_AUTH_SUCCESS,
 } from "../types";
 
 const handlers = {
@@ -31,7 +32,6 @@ const handlers = {
   [LOGIN]: (state) => ({ ...state, authSuccess: true }),
   [LOGOUT]: (state) => ({ ...state, authSuccess: false }),
   [UPDATE_USER]: (state, { payload }) => {
-    //console.log("payload", payload);
     const users = [...state.users];
     const index = users.findIndex((item) => item.uid === payload.uid);
     users[index] = { ...payload };
@@ -43,6 +43,7 @@ const handlers = {
   },
   [SET_ERROR]: (state, { payload }) => ({ ...state, error: payload }),
   [CLEAR_ERROR]: (state) => ({ ...state, error: null }),
+  [CLEAR_AUTH_SUCCESS]: (state) => ({ ...state, authSuccess: false }),
   [CLEAR_UPDATE_SUCCESS]: (state) => ({ ...state, updateSuccess: false }),
   [SET_LOADING]: (state) => ({ ...state, loading: true }),
   [STOP_LOADING]: (state) => ({ ...state, loading: false }),

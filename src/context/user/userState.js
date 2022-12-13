@@ -16,6 +16,7 @@ import {
   LOGIN,
   LOGOUT,
   CLEAR_UPDATE_SUCCESS,
+  CLEAR_AUTH_SUCCESS,
 } from "../types";
 import { UserContext } from "./userContext";
 import { userReducer } from "./userReducer";
@@ -42,6 +43,7 @@ export const UserState = ({ children }) => {
       setError(error);
     } finally {
       stopLoading();
+      setTimeout(() => clearAuthSuccess(), 1000);
     }
   }
 
@@ -129,6 +131,7 @@ export const UserState = ({ children }) => {
   const setError = (message) => dispatch({ type: SET_ERROR, payload: message });
   const clearError = () => dispatch({ type: CLEAR_ERROR });
   const clearUpdateSuccess = () => dispatch({ type: CLEAR_UPDATE_SUCCESS });
+  const clearAuthSuccess = () => dispatch({ type: CLEAR_AUTH_SUCCESS });
 
   return (
     <UserContext.Provider
