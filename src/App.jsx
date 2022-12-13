@@ -18,11 +18,11 @@ import Posts from "./pages/Posts";
 import AuthRegisterForm from "./pages/AuthRegisterForm";
 import AuthLoginForm from "./pages/AuthLoginForm";
 import { UserContext } from "./context/user/userContext";
-import { getCurrentUserUid_fb } from "./service/userService";
 
 function App() {
-  const { users, getAllUsers, authSuccess } = useContext(UserContext);
-  const [user, setUser] = useState(null);
+  const uid = localStorage.getItem("LOCAL_ID");
+  const { users, getAllUsers } = useContext(UserContext);
+  const user = users.find((item) => item.uid === uid);
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
@@ -38,18 +38,9 @@ function App() {
     getAllUsers();
   }, [getAllUsers]);
 
-  useEffect(() => {
-    const fetchCurrentUser = async () => {
-      const currentUserUid = await getCurrentUserUid_fb();
-      const currentUser = users.find((item) => item.uid === currentUserUid);
-      setUser(currentUser);
-    };
-    fetchCurrentUser();
-  }, [setUser, users, authSuccess]);
-
   return (
     <>
-      {authSuccess && user && (
+      {user && (
         <Switch>
           <Route
             path="/"
@@ -102,7 +93,7 @@ function App() {
           <Route path="/posts" exact render={() => <Posts user={user} />} />
         </Switch>
       )}
-      {!authSuccess && (
+      {!user && (
         <Switch>
           <Route
             path="/"

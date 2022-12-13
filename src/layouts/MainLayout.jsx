@@ -4,25 +4,16 @@ import SidebarRight from "../components/sidebarRight/SidebarRight";
 import { UserContext } from "../context/user/userContext";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { getCurrentUserUid_fb } from "../service/userService";
 
 const Main = ({ children }) => {
-  const { users, getAllUsers, authSuccess } = useContext(UserContext);
-  const [user, setUser] = useState(null);
+  const uid = localStorage.getItem("LOCAL_ID");
+  const { users, getAllUsers } = useContext(UserContext);
+  const user = users.find((item) => item.uid === uid);
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
     getAllUsers();
   }, [getAllUsers]);
-
-  useEffect(() => {
-    const fetchCurrentUser = async () => {
-      const currentUserUid = await getCurrentUserUid_fb();
-      const currentUser = users.find((item) => item.uid === currentUserUid);
-      setUser(currentUser);
-    };
-    fetchCurrentUser();
-  }, [setUser, users, authSuccess]);
 
   useEffect(() => {
     setWidth(window.innerWidth);
