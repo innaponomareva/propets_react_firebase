@@ -20,6 +20,7 @@ const AuthForm = ({ formType, values, onAuthSubmit, schema }) => {
   return (
     <form>
       <div className="auth_form_item">
+        {formType === "login" && <div></div>}
         <div className="auth_controls">
           {formType === "register" && (
             <TextInput
@@ -113,6 +114,7 @@ const AuthForm = ({ formType, values, onAuthSubmit, schema }) => {
             </>
           )}
         </div>
+        {formType === "register" && <div></div>}
       </div>
 
       <div className="auth_form_divider"></div>
