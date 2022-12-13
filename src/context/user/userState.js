@@ -39,11 +39,11 @@ export const UserState = ({ children }) => {
       const response = await login_fb(email, password);
       localStorage.setItem("LOCAL_ID", response.user.uid);
       setLogin();
+      setTimeout(() => clearAuthSuccess(), 1000);
     } catch (error) {
       setError(error);
     } finally {
       stopLoading();
-      setTimeout(() => clearAuthSuccess(), 1000);
     }
   }
 
