@@ -4,7 +4,17 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signOut,
+  getAuth,
 } from "firebase/auth";
+
+export async function getCurrentUserUid_fb() {
+  try {
+    const auth = await getAuth();
+    return auth?.currentUser?.uid;
+  } catch (error) {
+    return Promise.reject(error.message);
+  }
+}
 
 export async function login_fb(email, password) {
   try {

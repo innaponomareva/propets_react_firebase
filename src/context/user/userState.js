@@ -35,8 +35,7 @@ export const UserState = ({ children }) => {
     setLoading();
     clearError();
     try {
-      const response = await login_fb(email, password);
-      localStorage.setItem("LOCAL_ID", response.user.uid);
+      await login_fb(email, password);
       setLogin();
     } catch (error) {
       setError(error);
@@ -51,7 +50,6 @@ export const UserState = ({ children }) => {
     try {
       const response = await register_fb(email, password);
       await addUser({ uid: response.user.uid, name, email });
-      localStorage.setItem("LOCAL_ID", response.user.uid);
       setLogin();
     } catch (error) {
       setError(error);
@@ -65,7 +63,6 @@ export const UserState = ({ children }) => {
     clearError();
     try {
       await logout_fb();
-      localStorage.removeItem("LOCAL_ID");
       setLogout();
     } catch (error) {
       setError(error);
