@@ -6,14 +6,18 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 const Main = ({ children }) => {
-  const uid = localStorage.getItem("LOCAL_ID");
-  const { users, getAllUsers } = useContext(UserContext);
-  const user = users.find((item) => item.uid === uid);
+  const { users, getAllUsers, currentUid, getCurrentUid } =
+    useContext(UserContext);
+  const user = users.find((item) => item.uid === currentUid);
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
     getAllUsers();
   }, [getAllUsers]);
+
+  useEffect(() => {
+    getCurrentUid();
+  }, [getCurrentUid]);
 
   useEffect(() => {
     setWidth(window.innerWidth);

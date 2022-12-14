@@ -10,6 +10,7 @@ import {
   LOGOUT,
   CLEAR_UPDATE_SUCCESS,
   CLEAR_AUTH_SUCCESS,
+  GET_CURRENT_UID,
 } from "../types";
 
 const handlers = {
@@ -30,14 +31,16 @@ const handlers = {
     return { ...state, users: users };
   },
   [LOGIN]: (state) => ({ ...state, authSuccess: true }),
-  [LOGOUT]: (state) => ({ ...state, authSuccess: false }),
+  [LOGOUT]: (state) => ({ ...state, currentUid: null, authSuccess: false }),
   [UPDATE_USER]: (state, { payload }) => {
     const users = [...state.users];
     const index = users.findIndex((item) => item.uid === payload.uid);
     users[index] = { ...payload };
     return { ...state, users: users, updateSuccess: true };
   },
-
+  [GET_CURRENT_UID]: (state, { payload }) => {
+    return { ...state, currentUid: payload.uid };
+  },
   [GET_ALL_USERS]: (state, { payload }) => {
     return { ...state, users: [...payload] };
   },

@@ -17,27 +17,31 @@ import {
   LOGOUT,
   CLEAR_UPDATE_SUCCESS,
   CLEAR_AUTH_SUCCESS,
+  GET_CURRENT_UID,
 } from "../types";
 import { UserContext } from "./userContext";
 import { userReducer } from "./userReducer";
+import { auth } from "../../config/firebase_config";
+import { onAuthStateChanged } from "firebase/auth";
 
 export const UserState = ({ children }) => {
   const initialState = {
     users: [],
+    currentUid: null,
     authSuccess: false,
     updateSuccess: false,
     error: null,
     loading: false,
   };
   const [state, dispatch] = useReducer(userReducer, initialState);
-  const { users, authSuccess, updateSuccess, error, loading } = state;
+  const { users, currentUid, authSuccess, updateSuccess, error, loading } =
+    state;
 
   async function login({ email, password }) {
     setLoading();
     clearError();
     try {
-      const response = await login_fb(email, password);
-      localStorage.setItem("LOCAL_ID", response.user.uid);
+      await login_fb(email, password);
       setLogin();
       setTimeout(() => clearAuthSuccess(), 1000);
     } catch (error) {
@@ -53,7 +57,6 @@ export const UserState = ({ children }) => {
     try {
       const response = await register_fb(email, password);
       await addUser({ uid: response.user.uid, name, email });
-      localStorage.setItem("LOCAL_ID", response.user.uid);
       setLogin();
     } catch (error) {
       setError(error);
@@ -67,7 +70,6 @@ export const UserState = ({ children }) => {
     clearError();
     try {
       await logout_fb();
-      localStorage.removeItem("LOCAL_ID");
       setLogout();
     } catch (error) {
       setError(error);
@@ -103,6 +105,22 @@ export const UserState = ({ children }) => {
     }
   }
 
+  const getCurrentUid = useCallback(async () => {
+    try {
+      await onAuthStateChanged(auth, (user) => {
+        if (user) {
+          const currUid = user.uid;
+          setCurrentUid(currUid);
+          console.log("user signed in");
+        } else {
+          console.log("user signed out");
+        }
+      });
+    } catch (error) {
+      setError(error);
+    }
+  }, []);
+
   const getAllUsers = useCallback(async () => {
     clearError();
     setLoading();
@@ -119,6 +137,8 @@ export const UserState = ({ children }) => {
   // Actions:
   const setLogin = () => dispatch({ type: LOGIN });
   const setLogout = () => dispatch({ type: LOGOUT });
+  const setCurrentUid = (uid) =>
+    dispatch({ type: GET_CURRENT_UID, payload: { uid } });
   const setAddUser = ({ uid, name, email }) =>
     dispatch({ type: ADD_USER, payload: { uid, name, email } });
   const setUpdateUser = (update) =>
@@ -142,8 +162,10 @@ export const UserState = ({ children }) => {
         login,
         register,
         logout,
+        getCurrentUid,
         clearError,
         users,
+        currentUid,
         authSuccess,
         updateSuccess,
         error,

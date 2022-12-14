@@ -9,6 +9,7 @@ export const CLEAR_AUTH_SUCCESS = "CLEAR_AUTH_SUCCESS";
 export const SET_LOADING = "SET_LOADING";
 export const STOP_LOADING = "STOP_LOADING";
 
+export const GET_CURRENT_UID = "GET_CURRENT_UID";
 export const ADD_USER = "ADD_USER";
 export const UPDATE_USER = "UPDATE_USER";
 export const GET_ALL_USERS = "GET_ALL_USERS";
