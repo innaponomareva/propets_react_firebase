@@ -22,7 +22,6 @@ import { UserContext } from "./context/user/userContext";
 function App() {
   const { users, getAllUsers, currentUid, getCurrentUid } =
     useContext(UserContext);
-
   const user = users.find((item) => item.uid === currentUid);
   const [width, setWidth] = useState(0);
 
@@ -104,7 +103,7 @@ function App() {
           <Route
             path="/"
             exact
-            render={() => <Start user={user} width={width} />}
+            render={() => <Start user={null} width={width} />}
           />
           <Route exact path="/register" component={AuthRegisterForm} />
           <Route exact path="/login" component={AuthLoginForm} />

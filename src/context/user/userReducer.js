@@ -31,7 +31,7 @@ const handlers = {
     return { ...state, users: users };
   },
   [LOGIN]: (state) => ({ ...state, authSuccess: true }),
-  [LOGOUT]: (state) => ({ ...state, currentUid: null, authSuccess: false }),
+  [LOGOUT]: (state) => ({ ...state, authSuccess: false }),
   [UPDATE_USER]: (state, { payload }) => {
     const users = [...state.users];
     const index = users.findIndex((item) => item.uid === payload.uid);

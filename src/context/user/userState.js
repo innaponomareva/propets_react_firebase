@@ -113,6 +113,7 @@ export const UserState = ({ children }) => {
           setCurrentUid(currUid);
           console.log("user signed in");
         } else {
+          setCurrentUid(null);
           console.log("user signed out");
         }
       });
