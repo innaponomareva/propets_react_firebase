@@ -6,9 +6,11 @@ import PetSmall from "../components/PetSmall";
 import MainLayout from "../layouts/MainLayout";
 import SectionTitle from "../components/SectionTitle";
 import InvitationToRegister from "../components/InvitationToRegister";
+import { UserContext } from "../context/user/userContext";
 
-const LostAnimals = ({ user }) => {
+const LostAnimals = () => {
   const { getAllLost, lost, loading } = useContext(LostContext);
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     getAllLost();

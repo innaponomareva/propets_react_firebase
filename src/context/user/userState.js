@@ -1,4 +1,4 @@
-import React, { useCallback, useReducer } from "react";
+import React, { useCallback, useEffect, useReducer } from "react";
 import { login_fb, logout_fb, register_fb } from "../../service/userService";
 import {
   addUser_fb,
@@ -37,7 +37,9 @@ export const UserState = ({ children }) => {
   const { users, currentUid, authSuccess, updateSuccess, error, loading } =
     state;
 
-  async function login({ email, password }) {
+  const user = users.find((item) => item.uid === currentUid);
+
+  const login = async ({ email, password }) => {
     setLoading();
     clearError();
     try {
@@ -49,9 +51,9 @@ export const UserState = ({ children }) => {
     } finally {
       stopLoading();
     }
-  }
+  };
 
-  async function register({ name, email, password }) {
+  const register = async ({ name, email, password }) => {
     setLoading();
     clearError();
     try {
@@ -63,7 +65,7 @@ export const UserState = ({ children }) => {
     } finally {
       stopLoading();
     }
-  }
+  };
 
   async function logout() {
     setLoading();
@@ -135,6 +137,14 @@ export const UserState = ({ children }) => {
     }
   }, []);
 
+  useEffect(() => {
+    getAllUsers();
+  }, [getAllUsers]);
+
+  useEffect(() => {
+    getCurrentUid();
+  }, [getCurrentUid]);
+
   // Actions:
   const setLogin = () => dispatch({ type: LOGIN });
   const setLogout = () => dispatch({ type: LOGOUT });
@@ -165,6 +175,7 @@ export const UserState = ({ children }) => {
         logout,
         getCurrentUid,
         clearError,
+        user,
         users,
         currentUid,
         authSuccess,

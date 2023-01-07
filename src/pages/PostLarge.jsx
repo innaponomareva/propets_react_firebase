@@ -8,8 +8,10 @@ import Loader from "../components/loader/Loader";
 import MainLayout from "../layouts/MainLayout";
 import AvatarCard from "../components/AvatarCard";
 import InvitationToRegister from "../components/InvitationToRegister";
+import { UserContext } from "../context/user/userContext";
 
-const PostLarge = ({ user }) => {
+const PostLarge = () => {
+  const { user } = useContext(UserContext);
   const { posts, getAllPosts, loading } = useContext(PostContext);
   const { id } = useParams();
   const post = posts.find((item) => item.postId === id);

@@ -15,6 +15,7 @@ import PhotoUploadBox from "../components/PhotoUploadBox";
 
 import Button from "../components/buttons/Button";
 import { cleanStorage_fb, onFileChange_fb } from "../service/appService";
+import { UserContext } from "../context/user/userContext";
 
 const schema = yup.object().shape({
   title: yup
@@ -27,7 +28,8 @@ const schema = yup.object().shape({
     .required("Required field"),
 });
 
-const PostForm = ({ user }) => {
+const PostForm = () => {
+  const { user } = useContext(UserContext);
   const { addPost, submitSuccess } = useContext(PostContext);
   const [fileUrl, setFileUrl] = useState("");
   const [fileNameInStorage, setfileNameInStorage] = useState("");

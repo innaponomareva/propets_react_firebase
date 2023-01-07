@@ -4,8 +4,10 @@ import MainLayout from "../layouts/MainLayout";
 import SectionTitle from "../components/SectionTitle";
 import PetForm from "../components/PetForm";
 import { cleanStorage_fb } from "../service/appService";
+import { UserContext } from "../context/user/userContext";
 
-const LostPetForm = ({ user }) => {
+const LostPetForm = () => {
+  const { user } = useContext(UserContext);
   const { addLost, submitSuccess } = useContext(LostContext);
 
   useEffect(() => {

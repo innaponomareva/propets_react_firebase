@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Redirect, Route, Switch, withRouter } from "react-router-dom";
 import Start from "./pages/Start";
 import PostLarge from "./pages/PostLarge";
@@ -20,111 +20,43 @@ import AuthLoginForm from "./pages/AuthLoginForm";
 import { UserContext } from "./context/user/userContext";
 
 function App() {
-  const { users, getAllUsers, currentUid, getCurrentUid } =
-    useContext(UserContext);
-  const user = users.find((item) => item.uid === currentUid);
-  const [width, setWidth] = useState(0);
-
-  useEffect(() => {
-    setWidth(window.innerWidth);
-    function handleResize() {
-      setWidth(window.innerWidth);
-    }
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [width]);
-
-  useEffect(() => {
-    getAllUsers();
-  }, [getAllUsers]);
-
-  useEffect(() => {
-    getCurrentUid();
-  }, [getCurrentUid]);
+  const { user } = useContext(UserContext);
 
   return (
     <>
       {user && (
         <Switch>
-          <Route
-            path="/"
-            exact
-            render={() => <Start user={user} width={width} />}
-          />
+          <Route path="/" exact component={Start} />
           <Route exact path="/register" component={AuthRegisterForm} />
           <Route exact path="/login" component={AuthLoginForm} />
-          <Route
-            path="/addpost"
-            exact
-            render={() => <PostForm user={user} />}
-          />
-          <Route
-            path="/addlost"
-            exact
-            render={() => <LostPetForm user={user} />}
-          />
-          <Route
-            path="/addfound"
-            exact
-            render={() => <FoundPetForm user={user} />}
-          />
+          <Route path="/addpost" exact component={PostForm} />
+          <Route path="/addlost" exact component={LostPetForm} />
+          <Route path="/addfound" exact component={FoundPetForm} />
           <Route path="/lost/:id" exact component={LostPetProfile} />
-          <Route
-            path="/lost"
-            exact
-            render={() => <LostAnimals user={user} />}
-          />
+          <Route path="/lost" exact component={LostAnimals} />
           <Route path="/found/:id" exact component={FoundPetProfile} />
-          <Route
-            path="/found"
-            exact
-            render={() => <FoundAnimals user={user} />}
-          />
+          <Route path="/found" exact component={FoundAnimals} />
           <Route path="/hotels" exact component={Hotels} />
           <Route path="/walking" exact component={Walking} />
           <Route path="/fostering" exact component={Fostering} />
           <Route path="/vethelp" exact component={VetHelp} />
-          <Route
-            path="/profile"
-            exact
-            render={() => <UserProfile user={user} />}
-          />
-          <Route
-            path="/posts/:id"
-            exact
-            render={() => <PostLarge user={user} />}
-          />
-          <Route path="/posts" exact render={() => <Posts user={user} />} />
+          <Route path="/profile" exact component={UserProfile} />
+          <Route path="/posts/:id" exact component={PostLarge} />
+          <Route path="/posts" exact component={Posts} />
           <Route path="*" exact render={() => <Redirect to="/" />} />
         </Switch>
       )}
       {!user && (
         <Switch>
-          <Route
-            path="/"
-            exact
-            render={() => <Start user={null} width={width} />}
-          />
+          <Route path="/" exact component={Start} />
           <Route exact path="/register" component={AuthRegisterForm} />
           <Route exact path="/login" component={AuthLoginForm} />
           <Route path="/lost/:id" exact component={LostPetProfile} />
-          <Route
-            path="/lost"
-            exact
-            render={() => <LostAnimals user={user} />}
-          />
+          <Route path="/lost" exact component={LostAnimals} />
           <Route path="/found/:id" exact component={FoundPetProfile} />
-          <Route
-            path="/found"
-            exact
-            render={() => <FoundAnimals user={user} />}
-          />
-          <Route path="/posts" exact render={() => <Posts user={user} />} />
-          <Route
-            path="/posts/:id"
-            exact
-            render={() => <PostLarge user={user} />}
-          />
+          <Route path="/found" exact component={FoundAnimals} />
+          <Route path="/posts" exact component={Posts} />
+          <Route path="/posts/:id" exact component={PostLarge} />
           <Route path="*" exact render={() => <Redirect to="/" />} />
         </Switch>
       )}

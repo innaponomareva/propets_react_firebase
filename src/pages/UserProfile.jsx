@@ -9,8 +9,10 @@ import Button from "../components/buttons/Button";
 import UserPetForm from "../components/UserPetForm";
 import UserForm from "../components/UserForm";
 import { cleanStorage_fb } from "../service/appService";
+import { UserContext } from "../context/user/userContext";
 
-const UserProfile = ({ user }) => {
+const UserProfile = () => {
+  const { user } = useContext(UserContext);
   const { pets, getAllPets, addPet, loading, updateSuccess } =
     useContext(PetContext);
   const userPets = pets.filter((pet) => pet.uid === user.uid);

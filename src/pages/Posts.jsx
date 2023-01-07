@@ -4,10 +4,12 @@ import Loader from "../components/loader/Loader";
 import PostSmall from "../components/PostSmall";
 import SectionTitle from "../components/SectionTitle";
 import { PostContext } from "../context/post/postContext";
+import { UserContext } from "../context/user/userContext";
 import MainLayout from "../layouts/MainLayout";
 import styles from "./../css/posts.module.css";
 
-const Posts = ({ user }) => {
+const Posts = () => {
+  const { user } = useContext(UserContext);
   const { posts, getAllPosts, loading } = useContext(PostContext);
 
   useEffect(() => {

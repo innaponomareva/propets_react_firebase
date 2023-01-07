@@ -8,21 +8,24 @@ import { PetState } from "./context/pet/petState";
 import { PostState } from "./context/post/postState";
 import { LostState } from "./context/lost/lostState";
 import { FoundState } from "./context/found/foundState";
+import { WidthState } from "./context/width/widthState";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <UserState>
-    <PetState>
-      <PostState>
-        <LostState>
-          <FoundState>
-            <HashRouter>
-              <App />
-            </HashRouter>
-          </FoundState>
-        </LostState>
-      </PostState>
-    </PetState>
-  </UserState>
+  <WidthState>
+    <UserState>
+      <PetState>
+        <PostState>
+          <LostState>
+            <FoundState>
+              <HashRouter>
+                <App />
+              </HashRouter>
+            </FoundState>
+          </LostState>
+        </PostState>
+      </PetState>
+    </UserState>
+  </WidthState>
 );
